@@ -7,3 +7,4 @@
 *.res
 ^lib\/
 ^test\/lib\/
+^test\/project1$
