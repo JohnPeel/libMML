@@ -23,52 +23,52 @@
 
 {%MainUnit mml.lpr}
 
-function Client_Create(plugin_dir: shortstring; IOManager: Pointer): Pointer; cdecl;
+function Client_Create(plugin_dir: shortstring; IOManager: Pointer): Pointer; extdecl
 begin
   Result := TClient.Create(plugin_dir, TIOManager(IOManager));
 end;
 
-procedure Client_Free(Client: Pointer); cdecl;
+procedure Client_Free(Client: Pointer); extdecl
 begin
   TClient(Client).Free;
 end;
 
-function Client_getIOManager(Client: Pointer): Pointer; cdecl;
+function Client_getIOManager(Client: Pointer): Pointer; extdecl
 begin
   Result := TClient(Client).IOManager;
 end;
 
-function Client_getMFiles(Client: Pointer): Pointer; cdecl;
+function Client_getMFiles(Client: Pointer): Pointer; extdecl
 begin
   Result := TClient(Client).MFiles;
 end;
 
-function Client_getMFinder(Client: Pointer): Pointer; cdecl;
+function Client_getMFinder(Client: Pointer): Pointer; extdecl
 begin
   Result := TClient(Client).MFinder;
 end;
 
-function Client_getMBitmaps(Client: Pointer): Pointer; cdecl;
+function Client_getMBitmaps(Client: Pointer): Pointer; extdecl
 begin
   Result := TClient(Client).MBitmaps;
 end;
 
-function Client_getMDTMs(Client: Pointer): Pointer; cdecl;
+function Client_getMDTMs(Client: Pointer): Pointer; extdecl
 begin
   Result := TClient(Client).MDTMs;
 end;
 
-function Client_getMOCR(Client: Pointer): Pointer; cdecl;
+function Client_getMOCR(Client: Pointer): Pointer; extdecl
 begin
   Result := TClient(Client).MOCR;
 end;
 
-procedure Client_setWriteLnProc(Client: Pointer; WriteLnProc: Pointer); cdecl;
+procedure Client_setWriteLnProc(Client: Pointer; WriteLnProc: Pointer); extdecl
 begin
   TClient(Client).WritelnProc := TWriteLnProc(WriteLnProc);
 end;
 
-procedure Client_WriteLn(Client: Pointer; s: shortstring); cdecl;
+procedure Client_WriteLn(Client: Pointer; s: shortstring); extdecl
 begin
   TClient(Client).WriteLn(s);
 end;

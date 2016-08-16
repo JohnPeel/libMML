@@ -5,6 +5,7 @@
 *.or
 *.s
 *.res
+*.so
 ^lib\/
 ^test\/lib\/
 ^test\/project1$

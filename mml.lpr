@@ -27,18 +27,26 @@ library mml;
 uses
   Classes,
 
-  // MML
-  bitmaps, Client, colour_conv, dtm, dtmutil, files, finder, fontloader,
-  IOManager, mmath, mufasabase, MufasaTypes, mufasatypesutil, ocr, ocrutil,
-  os_linux, os_windows, libloader, tpa,
+  // OS-agnostic MML
+  bitmaps, Client, dtm, files, finder, fontloader, IOManager, MufasaTypes, ocr
+
+  // OS-specific MML
+  {$IFDEF MSWINDOWS}, os_windows{$ENDIF}
+  {$IFDEF LINUX}, os_linux{$ENDIF}
 
   // IOManager needed classes
-  graphics;
+  , graphics;
+
+{$define extdecl:=}
 
 {$include mml_client.inc}
 {$include mml_iomanager.inc}
 {$include mml_files.inc}
 {$include mml_finder.inc}
+{$include mml_bitmaps.inc}
+{$include mml_dtms.inc}
+{$include mml_ocr.inc}
+{$include mml_fonts.inc}
 
 end.
 
